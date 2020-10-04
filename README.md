@@ -1,3 +1,3 @@
 # Self Driving Car
 
-Collaborators : Ahmar Baig, Mathuran Mangaleswaran
+Collaborators : Ahmar Baig, Mathuran Mangaleswaran, Laith Adi 
