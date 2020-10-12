@@ -7,10 +7,10 @@ image = cv2.imread('/Users/laithadi/Desktop/Robotics/Project/selfdrivingcar/lane
 
 def threshold(img):
 
-    imgHsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    lowerWhite = np.array([80, 0, 0])
-    upperWhite = np.array([255, 160, 255])
-    maskWhite = cv2.inRange(imgHsv, lowerWhite, upperWhite)
+    imgHsv = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    lowerThreshold = 200
+    upperThreshold = 254
+    maskWhite = cv2.inRange(imgHsv, lowerThreshold, upperThreshold)
 
     return maskWhite
 
@@ -18,10 +18,17 @@ def laneDetection(img):
     
     imgthres = threshold(img)
 
+    # cv2.imshow('thres', imgthres)
+    # cv2.imshow('img', img)
+    # cv2.waitKey(0)
+
+    
+
     return imgthres
 
 
-i = laneDetection(image) 
+lane = laneDetection(image)
 
-cv2.imshow('image', i)
-cv2.waitKey(0) 
+cv2.imshow('thres', lane)
+cv2.imshow('img', image)
+cv2.waitKey(0)
