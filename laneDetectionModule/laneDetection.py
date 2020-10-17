@@ -7,6 +7,9 @@ from matplotlib import pyplot as plt
 # function for lane detection 
 def laneDetection(img):
 
+    # resize the image to (450, 325)
+    img = cv2.resize(img, (450, 325))
+
     # show og img 
     print(img.shape)
     cv2.imshow('OG', img)
@@ -35,7 +38,7 @@ def laneDetection(img):
     cv2.waitKey(0)
 
     # region of interest 
-    vertices = np.array([[(0, 324), (0, 289), (220, 186), (315, 186), (449, 324)]], dtype=np.int32)
+    vertices = np.array([[(0, 275), (200, 115), (275, 115), (315, 186), (449, 324)]], dtype=np.int32)
     mask = np.zeros_like(gr_img)
     cv2.fillPoly(mask, vertices, 255)
     masked_img = cv2.bitwise_and(gr_img, mask)
