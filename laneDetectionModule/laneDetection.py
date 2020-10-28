@@ -69,7 +69,7 @@ def laneDetection(img):
     cv2.imshow("LINES1", line_image)
     cv2.waitKey(0)
 
-    # print(lines)
+    print(lines)
 
     # putting it together 
     alpha = 1
@@ -88,7 +88,7 @@ def laneDetection(img):
 
 
 # getting the image 
-image = cv2.imread('/Users/laithadi/Desktop/Robotics/Project/selfdrivingcar/laneDetectionModule/roadImage.jpg')
+image = cv2.imread('/Users/laithadi/Desktop/Robotics/Project/selfdrivingcar/laneDetectionModule/roadImage2.jpg')
 
 finalimg = laneDetection(image)
 
